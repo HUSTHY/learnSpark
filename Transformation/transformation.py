@@ -43,7 +43,15 @@ if __name__ == '__main__':
     rdd=sc.textFile('data.txt')
     # MAP(rdd)
     # Filter(rdd)
-    strrdd=sc.textFile('str.txt')
+    # strrdd=sc.textFile('str.txt')
     # MapFlat(strrdd)
-    differenceofMAPandFlatMap(strrdd)
+    # differenceofMAPandFlatMap(strrdd)
     # distinct(rdd)
+
+    l1=[1,2,3,4]
+    l2=[5,6,7,8]
+    r1=sc.parallelize(l1)
+    print(r1.collect())
+    r2=sc.parallelize(l2)
+    r1=r1.union(r2)  #伪集合操作
+    print(r1.collect())
